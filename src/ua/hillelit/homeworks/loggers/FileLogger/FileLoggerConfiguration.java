@@ -3,24 +3,34 @@ package ua.hillelit.homeworks.loggers.FileLogger;
 import java.io.File;
 
 public class FileLoggerConfiguration {
-    private File file;
-    private LoggingLevel loggingLevel;
+    private String fileName;
+    private String loggingLevel;
     private long maxFileSize;
     private String format;
 
 
-    public FileLoggerConfiguration(File file, long maxFileSize) {
-
-        this.file = file;
+    public FileLoggerConfiguration(String fileName, String loggingLevel, long maxFileSize, String format) {
+        this.fileName = fileName;
+        this.loggingLevel = loggingLevel;
         this.maxFileSize = maxFileSize;
-
+        this.format = format;
     }
 
-    public File getFile() {
-        return file;
+    @Override
+    public String toString() {
+        return "FileLoggerConfiguration{" +
+                "fileName='" + fileName + '\'' +
+                ", loggingLevel='" + loggingLevel + '\'' +
+                ", maxFileSize=" + maxFileSize +
+                ", format='" + format + '\'' +
+                '}';
     }
 
-    public LoggingLevel getLoggingLevel() {
+    public String getFileName() {
+        return fileName;
+    }
+
+    public String getLoggingLevel() {
         return loggingLevel;
     }
 
